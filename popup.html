@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        min-width:357px;
+        overflow-x:hidden;
+      }
+
+      img {
+        margin:5px;
+        border:2px solid black;
+        vertical-align:middle;
+        width:75px;
+        height:75px;
+      }
+      #no{
+        display: none;
+      }
+    </style>
+
+    <!-- JavaScript and HTML must be in separate files for security. -->
+  </head>
+  <body>
+    <div id="ok">
+      <div id="recipients"></div>
+      <div>
+        <button id="addRecipient">addRecipient</button>
+        <button id="setRecipient">setRecipient</button>
+      </div>
+      <textarea id="messageBody" cols="30" rows="10"></textarea>
+      <button id="send">send</button>
+      <div id="response"></div>
+    </div>
+    <div id="no">
+      to use this extension <a id="magtifun" href='http://www.magtifun.ge'>www.magtifun.ge</a> must be opened
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

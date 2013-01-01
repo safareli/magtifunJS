@@ -2,7 +2,7 @@
 function sms () {
 	this.url = "scripts/sms_send.php";
 	this.dateToSend = {}; 
-};
+}
 
 //set Recipient
 sms.prototype.setRecipient = function(recipient) {
@@ -22,7 +22,7 @@ sms.prototype.send = function() {
 		'recipients' : this.recipients,
 		'message_body' : prompt(this.recipients+'\n message_body:...')
 	};
-	if (this.dateToSend.message_body != null && this.dateToSend.message_body != "") {
+	if (!this.dateToSend.message_body && this.dateToSend.message_body !== "") {
 		console.log(this.dateToSend.message_body);
 		$.post(this.url, this.dateToSend, this.postSuccess);
 	}
