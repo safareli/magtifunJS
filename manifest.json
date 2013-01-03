@@ -2,18 +2,17 @@
   "name": "magtifunJS",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "send sms easely",
-  "background": {
-    "scripts": ["eventPage.js"],
-    "persistent": false
-  },
-  "browser_action": {
-    "default_icon": "logo.ico",
-    "default_popup": "popup.html"
-  },
+  "description": "send sms faster",
+  "content_scripts": [
+    {
+      "matches": ["http://www.magtifun.ge/*page=2*"], 
+      "js": ["jquery.min.js", "contentscript.js"],
+      "ran_at": "document_end"
+    }
+  ],
   "permissions": [
     "tabs",
-    "http://*/*",
-    "https://*/*"
-  ]
+    "http://www.magtifun.ge/*"
+  ],
+  "web_accessible_resources": ["sms.js"] 
 }
