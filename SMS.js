@@ -10,6 +10,13 @@ $("#OOOOOK").hide().css({
 }).addClass("green medium round_border");
 
 
+window.onkeydown =function(e){
+	if(e.keyCode == 13 && e.shiftKey && document.activeElement == getID('message_body')){
+		e.preventDefault();
+		__sms_check__();
+	}
+};
+
 // Check SMS Status
 function __sms_check__ () {
 	// Read Form Variables
@@ -80,6 +87,7 @@ function __sms_check__ () {
 				},2000);
 				// Clear Form
 				checkLength(conf_sign_chars);
+				getID('message_body').focus();
 			} else if (data == 'not_enough_credit') {
 				// If SMS Send Returns Not Enough Credit
 				getID("loading").innerHTML = lang_not_enough_credit;
