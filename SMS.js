@@ -82,6 +82,8 @@ function __sms_check__ () {
 				getID("recipient").value = a;
 				getID("message_body").value = '';
 				$("#OOOOOK").fadeIn("normal");
+				var smsleft = $('form[name=user_action] .xxlarge.dark.english');
+				smsleft.text(smsleft.text()-1);
 				setTimeout(function(){
 					$("#OOOOOK").fadeOut("normal");
 				},2000);

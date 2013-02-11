@@ -1,8 +1,8 @@
 {
-  "name": "magtifunJS",
+  "name": "MagtiFun.GE",
   "version": "1.1",
   "manifest_version": 2,
-  "description": "send sms faster",
+  "description": "Send sms from Magtifun.ge using key combination Shift + Enter faster then EVER",
   "content_scripts": [
     {
       "matches": ["http://www.magtifun.ge/*page=2*"], 
@@ -10,6 +10,7 @@
       "ran_at": "document_end"
     }
   ],
+ "icons": {"128": "icon128.png" },
   "permissions": [
     "tabs",
     "http://www.magtifun.ge/*"
