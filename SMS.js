@@ -8,7 +8,12 @@ $("#OOOOOK").hide().css({
 	"background": "rgba(222, 253, 202, 0.43)",
 	"padding": ".5em"
 }).addClass("green medium round_border");
-
+var extMsgs = {
+	"not_logged_in_reload": {
+		en: "Unknown error occured. Reload page?",
+		ge: "დაფიქსირდა გაურკვეველი შეცდომა. განვაახლოთ გვერდი?"
+	}
+};
 
 window.onkeydown =function(e){
 	if(e.keyCode == 13 && e.shiftKey && document.activeElement == getID('message_body')){
@@ -114,7 +119,9 @@ function __sms_check__ () {
 				getID("message_body_div").innerHTML = lang_please_fill;
 				getID("loading").innerHTML = '';
 			} else if (data == 'not_logged_in') {
-				getID("log_out_form").submit();
+				//getID("log_out_form").submit(); // temp disabled
+				if (confirm(extMsgs["not_logged_in_reload"][language]))
+					location.reload(true);
 			} else {
 				// If SMS Send Returns Error
 				getID("loading").innerHTML = lang_not_completed;
